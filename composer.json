@@ -1,0 +1,21 @@
+{
+  "name": "lupid/food-fusion",
+  "type": "project",
+  "require-dev": {
+    "guzzlehttp/guzzle": "^7.9"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Lupid\\FoodFusion\\": "backend/src/",
+      "Helper\\": "backend/Helpers/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Hein Htet"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}
