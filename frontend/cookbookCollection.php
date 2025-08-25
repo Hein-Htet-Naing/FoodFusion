@@ -10,17 +10,14 @@ $cookbookCollection = new CookBookProcess();
 if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
       $difficulty = $_POST['difficulty'] ?? 'all';
       $searchTerm = $_POST['searchTerm'] ?? '';
-      if ($difficulty == 'all') {
-            $cookbookList = $cookbookCollection->fetch_all_cookbooks();
-      } else {
+      if ($difficulty != 'all' || $searchTerm != '') {
             $cookbookList = $cookbookCollection->fetch_cook_by_search_term($searchTerm ?? '', $difficulty ?? '');
+      } else {
+            $cookbookList = $cookbookCollection->fetch_all_cookbooks();
       }
 } else {
       $cookbookList = $cookbookCollection->fetch_all_cookbooks();
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +32,7 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
       <!-- <link rel="stylesheet" href="../src/output.css"> -->
       <style>
             .cookbook-card {
-                  transition: all 0.3s ease;
+                  transition: all 0.3s ease-in;
             }
 
             .cookbook-card:hover {
@@ -44,7 +41,7 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
             }
 
             .category-filter {
-                  transition: all 0.2s ease;
+                  transition: all 0.2s ease-in;
             }
 
             .category-filter.active {
@@ -78,7 +75,7 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
                   <h1 class="text-4xl md:text-5xl font-bold mb-6 mt-20">Explore Our Cookbook Collection</h1>
                   <p class="text-xl max-w-3xl mx-auto mb-8">Discover curated recipes from around the world, organized into beautiful cookbooks for every occasion and cuisine.</p>
                   <form method="POST" class="relative max-w-xl mx-auto">
-                        <input type="text" name='searchTerm' placeholder="Search cookbooks or recipes..." class="w-full bg-white px-6 py-3 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] text-gray-800">
+                        <input type="text" name="searchTerm" placeholder="Search cookbooks or recipes..." class="w-full bg-white px-6 py-3 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] text-gray-800">
                         <button type="submit" class="absolute right-2 top-2 text-gray-800 p-1 rounded-full">
                               <i class="fas fa-search w-6 h-6"></i>
                         </button>
@@ -106,16 +103,17 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
                   foreach ($cookbookList as $cl) {
                         echo
                         '
-                        <div class="cookbook-card bg-white rounded-xl shadow-md overflow-hidden">
+                  <div class="cookbook-card bg-white rounded-xl shadow-md overflow-hidden">
                         <div class="relative h-48 overflow-hidden">
                               <img src="../uploads/cookbook/' . htmlspecialchars($cl['recipePhoto']) . '" alt="Vegetarian Delights" class="w-full h-full object-cover">
                               <div class="absolute top-4 left-4">
                                     <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">' . htmlspecialchars($cl['recipeType']) . '</span>
                               </div>
-                              <div class="absolute bottom-4 right-4 flex items-center text-white bg-black bg-opacity-50 px-2 py-1 rounded-full">
+                              <button class="like-btn absolute bottom-4 right-4 flex items-center text-white bg-black bg-opacity-50 px-2 py-1 rounded-full"
+                                    cookbook_id="' . htmlspecialchars($cl['community_id']) . '">
                                     <i class="fas fa-heart mr-1"></i>
-                                    <span>128</span>
-                              </div>
+                                    <span>' . htmlspecialchars($cl['rection_count']) . '</span>
+                              </button>
                         </div>
                         <div class="p-6">
                               <h3 class="text-xl font-semibold text-gray-800 mb-2">' . htmlspecialchars($cl['recipeName']) . '</h3>
@@ -167,6 +165,7 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
             });
       </script>
       <script src="js/navbar.js"></script>
+      <script src="js/react.js"></script>
 </body>
 
 </html>

@@ -100,11 +100,11 @@ class CookBookProcess
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
       //search by search term
-      public function fetch_cook_by_search_term(string $difficulty, string $searchTerm)
+      public function fetch_cook_by_search_term(string $searchTerm, string $difficulty)
       {
             $role = 2;
             $status = 'active';
-            if ($searchTerm) {
+            if ($searchTerm != '') {
                   $likeTerm = '%' . $searchTerm . '%';
                   $sql = "SELECT c.*, u.firstName, u.lastName,u.image FROM cookbook c  
                   LEFT JOIN users u ON c.userid = u.userid 
