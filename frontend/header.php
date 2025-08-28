@@ -21,8 +21,8 @@
                               <li class="relative group">
                                     <a href="#" class="inline-block hover:text-amber-400">Resources</a>
                                     <ul class="absolute left-0 w-48 bg-white text-black shadow-lg rounded-md hidden group-hover:block z-10">
-                                          <li><a href="#" class="block px-4 py-2 hover:bg-amber-100 shadow-lg">Culinary Resources</a></li>
-                                          <li><a href="#" class="block px-4 py-2 hover:bg-amber-100 shadow-lg">Educational Resources</a></li>
+                                          <li><a href="curlinaryResources.php" class="block px-4 py-2 hover:bg-amber-100 shadow-lg">Culinary Resources</a></li>
+                                          <li><a href="educationalResources.php" class="block px-4 py-2 hover:bg-amber-100 shadow-lg">Educational Resources</a></li>
                                     </ul>
                               </li>
                               <li><a href="contact_us.php" class="hover:text-amber-400">Contact us</a></li>
