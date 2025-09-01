@@ -12,11 +12,11 @@ class UserlistController
             $userlist = new UserListProcess();
 
             if ($userlist->delete_user($id)) {
-                  $_SESSION['deleted_sucess'] = 'Deleted Sucessfully';
-                  HTTP::redirect("/backend/UserListPage.php");
+                  $_SESSION['deleted_success'] = 'Deleted Successfully';
+                  HTTP::redirect("/backend/UserListsPage.php");
             } else {
                   $_SESSION['deleted_error'] = 'Error Deleting User!';
-                  HTTP::redirect("/backend/UserListPage.php");
+                  HTTP::redirect("/backend/UserListsPage.php");
             }
       }
 }

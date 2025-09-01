@@ -26,7 +26,7 @@ if (isset($_SESSION['deleted_error'])) {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <title>Document</title>
+      <title>User List Page</title>
       <style>
             /* Hide scrollbar for Chrome, Safari and Opera */
             .scroll_hidden::-webkit-scrollbar {
@@ -102,7 +102,7 @@ if (isset($_SESSION['deleted_error'])) {
                                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium ">
                                                                         <a href="Public/UserList.php?userid=' . urlencode($ls['userid']) . '" 
                                                                         class="px-4 py-1 bg-orange-400 border border-orange-400 text-white hover:text-orange-900"
-                                                                        onclick="return confirm("Are you sure you want to delete this user?");">Delete</a>
+                                                                        onclick="return confirm(\'Are you sure you want to delete this user?\');">Delete</a>
                                                             </td>
                                                 </tbody>
                                                 ';
