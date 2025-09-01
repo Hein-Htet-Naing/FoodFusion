@@ -6,10 +6,10 @@
                          <h3 class="text-xl font-semibold mb-2">About FoodFusion</h3>
                          <p class="text-[#1C1C1C] mb-2 text-base">A culinary platform dedicated to promoting home cooking and culinary creativity among food enthusiasts.</p>
                          <!-- social media link -->
-                         <div class="flex gap-2 text-base">
-                               <input class="border p-1 w-[80%]" type="text" placeholder="Enter your email">
-                               <button class="inline-block px-4 py-1 bg-[#E57C2F] text-white
-                                    rounded-lg shadow hover:bg-[#d86f2a] transition">Subscribe</button>
+                         <div class="flex gap-2 text-base border border-gray-500 h-10 rounded">
+                               <input class="w-[80%] outline-0 px-2" type="text" placeholder="Enter your email">
+                               <button class="inline-block px-2 h-full bg-[#E57C2F] text-white
+                                rounded-r-sm shadow hover:bg-[#d86f2a] transition">Subscribe</button>
                          </div>
 
                    </div>

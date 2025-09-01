@@ -104,7 +104,7 @@ if (isset($_SESSION['deleted_error'])) {
                                                                   <div class="text-sm text-gray-500">' . htmlspecialchars($ls['created_at']) . '</div>
                                                             </td>
                                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium ">
-                                                                        <a href="Public/.php?userid=' . urlencode($ls['recipe_id']) . '" class="px-4 py-1 bg-orange-400 border border-orange-400 text-white hover:text-orange-900">Delete</a>
+                                                                        <a href="Public/Recipe.php?action=delete&recipeid=' . urlencode($ls['recipe_id']) . '" class="px-4 py-1 bg-orange-400 border border-orange-400 text-white hover:text-orange-900">Delete</a>
                                                             </td>
                                                 </tbody>
                                                 ';

@@ -33,7 +33,7 @@ $check_user = Auth::checkUser();
             <section id="recipe-cards" class="mb-16 group transform-3d perspective-1000">
                   <h2 class="text-3xl font-bold border-l-4 border-orange-500 pl-4 mb-8">Downloadable Recipe Cards</h2>
                   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-105 transition-transform duration-300 ease-in">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-103 transition-transform duration-300 ease-in">
                               <img src="img/pizza.jpeg" alt="Classic Margherita Pizza" class="w-full h-48 object-cover">
                               <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">Classic Margherita Pizza</h3>
@@ -43,7 +43,7 @@ $check_user = Auth::checkUser();
                                     </a>
                               </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-105 transition-transform duration-300 ease-in">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-103 transition-transform duration-300 ease-in">
                               <img src="img/Berry_salad.jpeg" alt="Summer Berry Salad" class="w-full h-48 object-cover">
                               <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">Summer Berry Salad</h3>
@@ -53,7 +53,7 @@ $check_user = Auth::checkUser();
                                     </a>
                               </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-105  transition-transform duration-300 ease-in">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-4 hover:scale-103  transition-transform duration-300 ease-in">
                               <img src="img/pancake_small.jpeg" alt="Fluffy American Pancakes" class="w-full h-48 object-cover">
                               <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">Fluffy American Pancakes</h3>

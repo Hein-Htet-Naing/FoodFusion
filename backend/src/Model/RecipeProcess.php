@@ -81,7 +81,9 @@ class RecipeProcess
       {
             try {
                   $sql = "SELECT rc.*,u.firstName,u.lastName FROM recipe_collection rc 
-                  LEFT JOIN users u ON rc.user_id = u.userid ORDER BY rc.recipe_id DESC;";
+                  LEFT JOIN users u ON rc.user_id = u.userid 
+                  WHERE rc.status = 'active'
+                  ORDER BY rc.recipe_id DESC;";
                   $stmt = $this->pdo->prepare($sql);
                   $stmt->execute();
                   return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -118,5 +120,15 @@ class RecipeProcess
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+      }
+
+      public function update_recipe_collection(int $recipeid)
+      {
+            $status = "inactive";
+            $sql = "UPDATE recipe_collection SET status = :status WHERE recipe_id =:recipe_id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':status', $status);
+            $stmt->bindParam(':recipe_id', $recipeid);
+            $stmt->execute();
       }
 }

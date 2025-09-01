@@ -20,37 +20,42 @@
                   <p class="text-lg text-gray-600 max-w-2xl mx-auto">Learn about sustainability and renewable energy with our collection of downloadable guides, infographics, and videos.</p>
             </header>
 
-            <section id="downloadables" class="mb-16">
+            <section id="downloadables" class="mb-20 h-[24em]">
                   <h2 class="text-3xl font-bold border-l-4 border-orange-500 pl-4 mb-8">Downloadable Guides</h2>
                   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
-                              <i class="fas fa-solar-panel text-5xl text-green-500 mb-4"></i>
-                              <h3 class="text-xl font-semibold mb-2">Intro to Solar Energy</h3>
-                              <p class="text-gray-600 mb-4 flex-grow">A beginner's guide to understanding how solar panels work and their benefits.</p>
-                              <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
-                                    <i class="fas fa-file-pdf mr-2"></i> Download PDF
-                              </a>
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center group text-center transform hover:-translate-y-2 transition-transform duration-300 ease-out">
+                              <img class="shadow-sm w-full object-cover h-48" src="img/solar_energy.jpeg" alt="benefits of Solar Energy">
+                              <h3 class="text-xl font-semibold mt-2">Intro to Solar Energy</h3>
+                              <div class="group-hover:block hidden absolute -bottom-32 bg-white rounded-lg shadow-lg p-3">
+                                    <p class="text-gray-600 mb-4 flex-grow">A beginner's guide to understanding how solar panels work and their benefits.</p>
+                                    <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                          <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                                    </a>
+                              </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
-                              <i class="fas fa-wind text-5xl text-green-500 mb-4"></i>
-                              <h3 class="text-xl font-semibold mb-2">The Power of Wind</h3>
-                              <p class="text-gray-600 mb-4 flex-grow">Explore the technology behind wind turbines and their role in clean energy.</p>
-                              <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
-                                    <i class="fas fa-file-pdf mr-2"></i> Download PDF
-                              </a>
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center group relative text-center transform hover:-translate-y-2 transition-transform duration-300 ease-out">
+                              <img class="shadow-sm object-cover w-full h-48" src="img/wind_power.jpeg" alt="benefits of Wind Energy">
+                              <h3 class="text-xl font-semibold mt-2">The Power of Wind</h3>
+                              <div class="group-hover:block hidden absolute -bottom-25 bg-white rounded-lg shadow-lg p-3">
+                                    <p class="text-gray-600 mb-4 flex-grow">Explore the technology behind wind turbines and their role in clean energy.</p>
+                                    <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                          <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                                    </a>
+                              </div>
                         </div>
-                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transform hover:-translate-y-2 transition-transform duration-300">
-                              <i class="fas fa-leaf text-5xl text-green-500 mb-4"></i>
-                              <h3 class="text-xl font-semibold mb-2">Sustainable Living Tips</h3>
-                              <p class="text-gray-600 mb-4 flex-grow">Practical tips for reducing your carbon footprint at home and in the kitchen.</p>
-                              <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
-                                    <i class="fas fa-file-pdf mr-2"></i> Download PDF
-                              </a>
+                        <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center group relative text-center transform hover:-translate-y-2 transition-transform duration-300 ease-out">
+                              <img class="shadow-sm object-cover w-full h-48" src="img/carbon_footprint.jpeg" alt="benefits of Wind Energy">
+                              <h3 class="text-xl font-semibold mt-2">Sustainable Living Tips</h3>
+                              <div class="group-hover:block hidden absolute -bottom-26 bg-white rounded-lg shadow-lg p-3 transform transition-all duration-300 ease-in">
+                                    <p class="text-gray-600 mb-4 flex-grow">Practical tips for reducing your carbon footprint at home and in the kitchen.</p>
+                                    <a href="#" class="mt-auto inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                          <i class="fas fa-file-pdf mr-2"></i> Download PDF
+                                    </a>
+                              </div>
                         </div>
-                  </div>
             </section>
 
-            <section id="visuals">
+            <section id="visuals" class="mt-20">
                   <h2 class="text-3xl font-bold border-l-4 border-orange-500 pl-4 mb-8">Infographics & Videos</h2>
                   <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         <div class="lg:col-span-1 bg-white p-6 rounded-lg shadow-lg">
