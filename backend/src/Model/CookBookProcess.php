@@ -145,4 +145,15 @@ class CookBookProcess
             $stmt->execute();
             return $stmt->fetch(PDO::FETCH_ASSOC);
       }
+      public function fetch_Limited_cookbook()
+      {
+            $sql = "SELECT c.*, u.firstName, u.lastName, u.image FROM cookbook c
+            LEFT JOIN users u ON c.userid = u.userid
+            WHERE u.status = 'active'
+            ORDER BY c.community_id DESC
+            LIMIT 3";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+      }
 }

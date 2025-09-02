@@ -1,3 +1,11 @@
+<?php
+require __DIR__ . '../../vendor/autoload.php';
+session_start();
+
+use Helper\Auth;
+
+$check_user = Auth::checkUser();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +14,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Educational Resources - FoodFusion</title>
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <script src="https://kit.fontawesome.com/0bf00ca408.js" crossorigin="anonymous"></script>
 
 </head>
 

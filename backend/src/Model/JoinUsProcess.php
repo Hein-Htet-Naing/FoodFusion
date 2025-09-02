@@ -4,13 +4,16 @@ namespace Lupid\FoodFusion\Model;
 
 use Lupid\FoodFusion\Config\Database as dbh;
 use Helper\HTTP;
+use PDOException;
+use Exception;
 
 class JoinUsProcess
 {
       private $firstName;
       private $lastName;
       private $email;
-      private $password;
+      private $pwd;
+      private $image;
       private $pdo;
       public function __construct()
       {
@@ -26,23 +29,27 @@ class JoinUsProcess
                   HTTP::redirect("/frontend/index.php");
                   return;
             }
-            $this->password = password_hash(trim($data['pwd']) ?? '', PASSWORD_BCRYPT);
+            $this->pwd = password_hash(trim($data['pwd']) ?? '', PASSWORD_BCRYPT);
+            $this->image =  'default.jpeg';
       }
 
       public function email_duplicate()
       {
             $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+            $stmt->bindParam(':email', $this->email);
             $stmt->execute();
             return $stmt->fetchColumn() > 0;
       }
       public function join_us()
       {
-            $sql = " INSERT INTO users (firstName,lastName,email,pwd) 
-            VALUES (:first_name,:last_name,:email,:password)";
+            $sql = "INSERT INTO users (firstName,lastName,email,pwd,image) 
+                  VALUES (:firstName,:lastName,:email,:pwd,:image)";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':first_name', $this->firstName);
-            $stmt->bindParam(':last_name', $this->lastName);
-            $stmt->bindParam(':email', $this->email);
-            $stmt->bindParam(':password', $this->password);
+            $stmt->bindValue(':firstName', $this->firstName);
+            $stmt->bindValue(':lastName', $this->lastName);
+            $stmt->bindValue(':email', $this->email);
+            $stmt->bindValue(':pwd', $this->pwd);
+            $stmt->bindValue(':image', $this->image);
+            $stmt->execute();
       }
 }

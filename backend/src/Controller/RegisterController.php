@@ -12,7 +12,7 @@ class RegisterController
 {
       public function handle()
       {
-            //reCaptha
+            // reCaptha
             if (isset($_POST['g-recaptcha-response'])) {
                   $recaptcha = $_POST['g-recaptcha-response'];
             }

@@ -85,11 +85,11 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
 
       <!-- Main Content -->
       <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <!-- Category Filters -->
+            <!-- Difficulty Filters -->
             <div class="mb-12">
                   <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse by Difficulty</h2>
                   <form method="POST" class="flex flex-wrap gap-3">
-                        <button type="submit" name='difficulty' value="all" class="difficulty-filter active px-4 py-2 rounded-full bg-orange-500">All Cookbooks</button>
+                        <button type="submit" name='difficulty' value="all" class="difficulty-filter active px-4 py-2 rounded-full bg-white">All Cookbooks</button>
                         <button type="submit" name='difficulty' value="easy" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Easy</button>
                         <button type="submit" name='difficulty' value="medium" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Medium</button>
                         <button type="submit" name='difficulty' value="hard" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Hard</button>

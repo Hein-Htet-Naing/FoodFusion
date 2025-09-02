@@ -92,10 +92,12 @@ class RecipeProcess
             }
       }
 
-      public function search_recipe_by_name(string $searchTerm)
+      public function search_recipe_by_name(string $searchTerm, string $difficulty)
       {
-            $likeTerm = '%' . $searchTerm . '%';
-            $sql = "SELECT rc.*,u.firstName,u.lastName FROM recipe_collection rc 
+            $status = "active";
+            if ($searchTerm != '') {
+                  $likeTerm = '%' . $searchTerm . '%';
+                  $sql = "SELECT rc.*,u.firstName,u.lastName FROM recipe_collection rc 
                   LEFT JOIN users u ON rc.user_id = u.userid 
                   WHERE rc.recipeName LIKE :name
                   OR rc.recipeType LIKE :type
@@ -103,12 +105,22 @@ class RecipeProcess
                   OR rc.description LIKE :description
                   OR rc.recipe LIKE :recipe
                   ORDER BY rc.recipe_id DESC;";
-            $stmt = $this->pdo->prepare($sql);
-            $stmt->bindParam(':name', $likeTerm);
-            $stmt->bindParam(':type', $likeTerm);
-            $stmt->bindParam(':difficulty', $likeTerm);
-            $stmt->bindParam(':description', $likeTerm);
-            $stmt->bindParam(':recipe', $likeTerm);
+                  $stmt = $this->pdo->prepare($sql);
+                  $stmt->bindParam(':name', $likeTerm);
+                  $stmt->bindParam(':type', $likeTerm);
+                  $stmt->bindParam(':difficulty', $likeTerm);
+                  $stmt->bindParam(':description', $likeTerm);
+                  $stmt->bindParam(':recipe', $likeTerm);
+            } else {
+                  $sql = "SELECT rc.*,u.firstName,u.lastName FROM recipe_collection rc 
+                  LEFT JOIN users u ON rc.user_id = u.userid 
+                  WHERE u.status = :status AND 
+                  (rc.recipeDifficulty = :difficulty)
+                  ORDER BY rc.recipe_id DESC;";
+                  $stmt = $this->pdo->prepare($sql);
+                  $stmt->bindParam(':status', $status);
+                  $stmt->bindParam(':difficulty', $difficulty);
+            }
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
       }

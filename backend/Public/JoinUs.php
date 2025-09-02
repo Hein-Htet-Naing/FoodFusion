@@ -1,10 +1,10 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Lupid\FoodFusion\Controller\AdminController;
+use Lupid\FoodFusion\Controller\JoinUsController;
 
 session_start();
 
 
-$controller = new AdminController();
+$controller = new JoinUsController();
 $controller->handle();

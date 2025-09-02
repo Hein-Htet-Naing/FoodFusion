@@ -4,12 +4,16 @@ session_start();
 
 use Helper\Auth;
 use Lupid\FoodFusion\Model\RecipeProcess;
+use Lupid\FoodFusion\Model\CookBookProcess;
 
 $check_user = Auth::checkUser();
 
 $recipe_colllection = new RecipeProcess();
+$cookbook_collection = new CookBookProcess();
 
 $recipe = $recipe_colllection->fetch_Limited_recipe();
+
+$cookbook = $cookbook_collection->fetch_Limited_cookbook();
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +105,7 @@ $recipe = $recipe_colllection->fetch_Limited_recipe();
       <!-- Join Us (Pop UP) Form -->
       <section id="joinUsForm" class="fixed hidden top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-[400px] z-50">
             <form enctype="multipart/form-data" method="POST"
-                  action="../backend/Public/Register.php"
+                  action="../backend/Public/JoinUs.php"
                   class="w-full p-8 flex flex-col gap-2 bg-white rounded-lg shadow-lg relative">
                   <?php
                   // show error messages
@@ -156,14 +160,14 @@ $recipe = $recipe_colllection->fetch_Limited_recipe();
 
       <!-- Recipe  -->
       <section class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8">
                   <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Recipes</h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Handpicked recipes from our community chefs</p>
                   </div>
 
 
-                  <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 px-8">
+                  <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center place-items-center">
                         <?php foreach ($recipe as $rp) {
                               echo
                               '
@@ -195,49 +199,105 @@ $recipe = $recipe_colllection->fetch_Limited_recipe();
                   </div>
             </div>
       </section>
-      <section class="py-16 bg-orange-100">
-            <div class="container mx-auto px-6">
-                  <h2 class="text-3xl font-bold text-center text-orange-600 mb-12">Our Team</h2>
-                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <!-- Team Member  -->
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                              <img src="img/Gordon Ramsey.jpeg" alt="Gordon Ramsey" class="w-full h-64 object-cover">
-                              <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-gray-800">Gordon Ramsey</h3>
-                                    <p class="text-orange-600 mb-2">Founder & Executive Chef</p>
-                                    <p class="text-gray-600">Former Michelin-star chef turned culinary educator with a passion for Latin American cuisine.</p>
+
+      <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8">
+                  <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Latest CookBook</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover recipes shared by our community</p>
+                  </div>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <?php
+                        foreach ($cookbook as $cl) {
+                              echo
+                              '
+                  <div class="cookbook-card bg-white rounded-xl shadow-md overflow-hidden">
+                        <div class="relative h-48 overflow-hidden">
+                              <img src="../uploads/cookbook/' . htmlspecialchars($cl['recipePhoto']) . '" alt="Vegetarian Delights" class="w-full h-full object-cover">
+                              <div class="absolute top-4 left-4">
+                                    <span class="px-3 py-1 bg-green-100 text-green-800 text-sm font-medium rounded-full">' . htmlspecialchars($cl['recipeType']) . '</span>
                               </div>
                         </div>
-
-
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                              <img src="img/cuoco.jpeg" alt="James Chen" class="w-full h-64 object-cover">
-                              <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-gray-800">James Chen</h3>
-                                    <p class="text-orange-600 mb-2">Head of Content</p>
-                                    <p class="text-gray-600">Food journalist and cookbook author specializing in Asian fusion techniques.</p>
+                        <div class="p-6">
+                              <h3 class="text-xl font-semibold text-gray-800 mb-2">' . htmlspecialchars($cl['recipeName']) . '</h3>
+                              <p class="text-gray-600 mb-4">' . htmlspecialchars($cl['description']) . '</p>
+                              <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                         <span class="text-sm text-gray-600"> Difficulty: ' . htmlspecialchars($cl['difficulty']) . '</span>
+                                    </div>
                               </div>
                         </div>
+                  </div>       
+                        ';
+                        };
+                        ?>
+                  </div>
 
 
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                              <img src="img/c_manager.jpeg" alt="Sophie Laurent" class="w-full h-64 object-cover">
-                              <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-gray-800">Sophie Laurent</h3>
-                                    <p class="text-orange-600 mb-2">Community Manager</p>
-                                    <p class="text-gray-600">Pastry chef turned digital community builder, creating spaces for food lovers to connect.</p>
+                  <div class="text-center mt-12">
+                        <a href="cookbookCollection.php" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600">
+                              View Our Recipe Books <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                  </div>
+            </div>
+
+
+      </section>
+      <section class="py-16 px-6 max-w-6xl mx-auto">
+            <div class="grid grid-cols-4 grid-rows-5 gap-2 parent">
+                  <div class="col-start-2 col-span-2 row-start-2 row-span-4 bg-gray-200 div1">
+                        <img src="img/Baked.jpeg" alt="">
+                  </div>
+                  <div class="col-start-1 col-span-3 row-start-1 bg-gray-300 div2">2</div>
+                  <div class="col-start-1 row-start-2 row-span-2 bg-gray-400 div3">3</div>
+                  <div class="col-start-1 row-start-4 row-span-2 bg-gray-500 div4">4</div>
+                  <div class="col-start-4 row-start-1 row-span-5 bg-gray-600 div5">5</div>
+            </div>
+      </section>
+      <section class="py-16 px-6 max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                  <div class="md:w-1/2 order-2 md:order-1">
+                        <h2 class="text-3xl font-bold text-orange-600 mb-6">Our Mission</h2>
+                        <p class="text-gray-700 mb-4">At FoodFusion, our mission is to democratize culinary knowledge and inspire people to discover the joy of cooking, regardless of their skill level or background.</p>
+                        <p class="text-gray-700 mb-6">We're committed to building a global community where food enthusiasts can share, learn, and grow together through the universal language of cuisine.</p>
+                        <div class="space-y-4">
+                              <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-orange-100 p-2 rounded-full mr-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                          </svg>
+                                    </div>
+                                    <div>
+                                          <h3 class="font-semibold text-lg text-gray-800">Inspire Creativity</h3>
+                                          <p class="text-gray-600">We provide the tools and inspiration to help you experiment with flavors and techniques, transforming everyday ingredients into extraordinary meals.</p>
+                                    </div>
+                              </div>
+                              <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-orange-100 p-2 rounded-full mr-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                          </svg>
+                                    </div>
+                                    <div>
+                                          <h3 class="font-semibold text-lg text-gray-800">Connect Communities</h3>
+                                          <p class="text-gray-600">We bridge cultural divides by creating spaces where traditional recipes and innovative fusion cuisine can be shared and celebrated together.</p>
+                                    </div>
+                              </div>
+                              <div class="flex items-start">
+                                    <div class="flex-shrink-0 bg-orange-100 p-2 rounded-full mr-4">
+                                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                          </svg>
+                                    </div>
+                                    <div>
+                                          <h3 class="font-semibold text-lg text-gray-800">Promote Sustainability</h3>
+                                          <p class="text-gray-600">We advocate for mindful cooking practices that reduce food waste, support local producers, and respect our planet's resources.</p>
+                                    </div>
                               </div>
                         </div>
-
-
-                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                              <img src="img/video_pdr.jpeg" alt="Ahmed Khan" class="w-full h-64 object-cover">
-                              <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-gray-800">Ahmed Khan</h3>
-                                    <p class="text-orange-600 mb-2">Video Producer</p>
-                                    <p class="text-gray-600">Culinary videographer bringing recipes to life through stunning visual storytelling.</p>
-                              </div>
-                        </div>
+                  </div>
+                  <div class="md:w-1/2 order-1 md:order-2">
+                        <img src="img/team_mission.jpeg" alt="FoodFusion team mission" class="rounded-xl shadow-2xl">
                   </div>
             </div>
       </section>

@@ -8,14 +8,16 @@ use Lupid\FoodFusion\Model\RecipeProcess;
 $check_user = Auth::checkUser();
 
 $recipe_colllection = new RecipeProcess();
-$search = '';
-if (isset($_GET['search'])) {
-      $search = trim($_GET['search']);
-}
-if (!$search) {
-      $recipe = $recipe_colllection->fetch_all_data_from_recipeCollection();
+if (isset($_POST['search']) || isset($_POST['difficulty'])) {
+      $difficulty = $_POST['difficulty'] ?? 'all';
+      $searchTerm = $_POST['search'] ?? '';
+      if ($difficulty != 'all' || $searchTerm != '') {
+            $recipe = $recipe_colllection->search_recipe_by_name($searchTerm ?? '', $difficulty ?? '');
+      } else {
+            $recipe = $recipe_colllection->fetch_all_data_from_recipeCollection();
+      }
 } else {
-      $recipe = $recipe_colllection->search_recipe_by_name($search);
+      $recipe = $recipe_colllection->fetch_all_data_from_recipeCollection();
 }
 
 ?>
@@ -54,17 +56,17 @@ if (!$search) {
                   <div class="absolute bottom-0 left-0 right-0 h-16 bg-white transform skew-y-1 -z-1"></div>
             </section>
 
+
             <!-- Search and Filters -->
-            <section class="py-8 px-6 max-w-7xl mx-auto">
+            <section class="pt-8 px-6 max-w-7xl mx-auto">
                   <div class="bg-white rounded-xl shadow-md p-6">
 
                         <!-- Search Bar -->
                         <div class="flex-1">
                               <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search Recipes</label>
                               <!-- filter the dishes -->
-                              <form class="relative flex items-center  gap-1 md:gap-4" action="" method="GET">
+                              <form class="relative flex items-center  gap-1 md:gap-4" action="" method="POST">
                                     <input type="text" id="search" name="search" placeholder="What are you craving?"
-                                          value="<?php htmlspecialchars($search); ?>"
                                           class="w-full pl-10 pr-4 py-3 border border-[#ccc] rounded-lg focus:outline-none focus:ring-1">
                                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                           <svg class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,6 +77,17 @@ if (!$search) {
                                           value="Search">
                               </form>
                         </div>
+                  </div>
+                  <!-- Difficulty Filters -->
+                  <div class="mt-5">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse by Difficulty</h2>
+                        <form method="POST" class="flex flex-wrap gap-3">
+                              <button type="submit" name='difficulty' value="all" class="difficulty-filter active px-4 py-2 rounded-full bg-white">All Cookbooks</button>
+                              <button type="submit" name='difficulty' value="easy" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Easy</button>
+                              <button type="submit" name='difficulty' value="medium" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Medium</button>
+                              <button type="submit" name='difficulty' value="hard" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Hard</button>
+                              <button type="submit" name='difficulty' value="difficult" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Difficult</button>
+                        </form>
                   </div>
             </section>
 
@@ -123,22 +136,21 @@ if (!$search) {
 
       </main>
       <?php require('footer.php') ?>
+      <script>
+            // Difficulty filter functionality
+            document.querySelectorAll('.difficulty-filter').forEach(button => {
+                  button.addEventListener('click', function() {
+                        document.querySelectorAll('.difficulty-filter').forEach(btn => {
+                              btn.classList.remove('active');
+                              btn.classList.add('bg-orange-500', 'border', 'border-gray-300', 'hover:bg-gray-100');
+                        });
+
+                        this.classList.add('active');
+                        this.classList.remove('bg-white', 'border', 'border-gray-300', 'hover:bg-gray-100');
+                  });
+            });
+      </script>
       <script src="js/navbar.js"></script>
 </body>
 
 </html>
-
-<!-- <nav class="flex items-center space-x-2">
-      <button class="px-3 py-1 rounded-md bg-orange-500 text-white">1</button>
-      <button class="px-3 py-1 rounded-md bg-white border border-gray-300 hover:bg-gray-50">2</button>
-      <button class="px-3 py-1 rounded-md bg-white border border-gray-300 hover:bg-gray-50">3</button>
-      <span class="px-2">...</span>
-      <button class="px-3 py-1 rounded-md bg-white border border-gray-300 hover:bg-gray-50">8</button>
-      <button class="px-3 py-1 rounded-md bg-white border border-gray-300 hover:bg-gray-50">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-      </button>
-</nav>
-</div>
-</section> -->

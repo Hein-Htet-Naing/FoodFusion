@@ -12,7 +12,7 @@ class JoinUsController
       public function handle()
       {
 
-            foreach (['firstName', 'lastName', 'email', 'pwd', 'confrimPwd', 'phone'] as $fields) {
+            foreach (['firstName', 'lastName', 'email', 'pwd'] as $fields) {
 
                   if (!isset($_POST[$fields]) || empty(trim($_POST[$fields]))) {
                         $_SESSION['join_us_error'] = "This $fields is required!";
