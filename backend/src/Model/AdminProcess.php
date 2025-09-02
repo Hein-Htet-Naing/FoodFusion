@@ -6,6 +6,7 @@ use Lupid\FoodFusion\Config\Database as dbh;
 use Helper\HTTP;
 use PDOException;
 use Exception;
+use PDO;
 
 class AdminProcess
 {
@@ -89,5 +90,13 @@ class AdminProcess
             } catch (PDOException $e) {
                   throw new Exception("Database error: " . $e->getMessage());
             }
+      }
+      public function fetch_num_of_admin_from_user_table()
+      {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM users WHERE role_id = :admin_id OR role_id = :chef_id");
+            $stmt->bindValue(':admin_id', 1, PDO::PARAM_INT);
+            $stmt->bindValue(':chef_id', 3, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetchColumn();
       }
 }

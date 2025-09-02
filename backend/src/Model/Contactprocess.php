@@ -63,4 +63,13 @@ class Contactprocess
             //return true if row is deleted
             return $stmt->rowCount() > 0;
       }
+
+      public function fetch_message_count()
+      {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM contact_submit WHERE status = :status");
+            $status = "pending";
+            $stmt->bindParam(':status', $status);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+      }
 }

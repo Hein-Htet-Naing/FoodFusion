@@ -195,6 +195,52 @@ $recipe = $recipe_colllection->fetch_Limited_recipe();
                   </div>
             </div>
       </section>
+      <section class="py-16 bg-orange-100">
+            <div class="container mx-auto px-6">
+                  <h2 class="text-3xl font-bold text-center text-orange-600 mb-12">Our Team</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!-- Team Member  -->
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                              <img src="img/Gordon Ramsey.jpeg" alt="Gordon Ramsey" class="w-full h-64 object-cover">
+                              <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-gray-800">Gordon Ramsey</h3>
+                                    <p class="text-orange-600 mb-2">Founder & Executive Chef</p>
+                                    <p class="text-gray-600">Former Michelin-star chef turned culinary educator with a passion for Latin American cuisine.</p>
+                              </div>
+                        </div>
+
+
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                              <img src="img/cuoco.jpeg" alt="James Chen" class="w-full h-64 object-cover">
+                              <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-gray-800">James Chen</h3>
+                                    <p class="text-orange-600 mb-2">Head of Content</p>
+                                    <p class="text-gray-600">Food journalist and cookbook author specializing in Asian fusion techniques.</p>
+                              </div>
+                        </div>
+
+
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                              <img src="img/c_manager.jpeg" alt="Sophie Laurent" class="w-full h-64 object-cover">
+                              <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-gray-800">Sophie Laurent</h3>
+                                    <p class="text-orange-600 mb-2">Community Manager</p>
+                                    <p class="text-gray-600">Pastry chef turned digital community builder, creating spaces for food lovers to connect.</p>
+                              </div>
+                        </div>
+
+
+                        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                              <img src="img/video_pdr.jpeg" alt="Ahmed Khan" class="w-full h-64 object-cover">
+                              <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-gray-800">Ahmed Khan</h3>
+                                    <p class="text-orange-600 mb-2">Video Producer</p>
+                                    <p class="text-gray-600">Culinary videographer bringing recipes to life through stunning visual storytelling.</p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </section>
       <!-- how it works -->
       <section class="py-16 bg-white skew-section relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 skew-content">
@@ -230,8 +276,7 @@ $recipe = $recipe_colllection->fetch_Limited_recipe();
                   </div>
             </div>
       </section>
-
-      <!-- Cookie Consent Banner -->
+      <!-- Cookie Consent -->
       <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] shadow-lg p-4 flex flex-col items-center justify-center gap-2 z-50">
             <p class="text-center  text-white px-4 py-2 rounded-md">
                   We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.

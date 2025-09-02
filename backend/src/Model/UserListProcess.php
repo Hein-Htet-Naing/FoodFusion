@@ -43,4 +43,14 @@ class UserListProcess
             //return true if row is deleted
             return $stmt->rowCount() > 0;
       }
+      public function fetch_user_count()
+      {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM users WHERE role_id = :roleid AND status = :status");
+            $id = 2;
+            $status = "active";
+            $stmt->bindParam(':roleid', $id);
+            $stmt->bindParam(':status', $status);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+      }
 }

@@ -1,5 +1,19 @@
 <?php
 session_start();
+require __DIR__ . "/../vendor/autoload.php";
+
+use Helper\Auth;
+use Lupid\FoodFusion\Model\AdminProcess as ModelAdminProcess;
+use Lupid\FoodFusion\Model\UserListProcess as ModelUserProcess;
+use Lupid\FoodFusion\Model\RecipeProcess as ModelRecipeProcess;
+use Lupid\FoodFusion\Model\Contactprocess as ModelMesssageProcess;
+
+$check_user  = Auth::checkUser();
+
+$fetch_admin = new ModelAdminProcess();
+$fetch_user = new ModelUserProcess();
+$fetch_recipe = new ModelRecipeProcess();
+$fetch_message = new ModelMesssageProcess();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +55,7 @@ session_start();
                                           <dl>
                                                 <dt class="text-sm font-medium text-gray-500 truncate">Admin</dt>
                                                 <dd>
-                                                      <div class="text-lg font-medium text-gray-900">0</div>
+                                                      <div class="text-lg font-medium text-gray-900"><?= $fetch_admin->fetch_num_of_admin_from_user_table() ?></div>
                                                 </dd>
                                           </dl>
                                     </div>
@@ -69,7 +83,7 @@ session_start();
                                           <dl>
                                                 <dt class="text-sm font-medium text-gray-500 truncate">Total user</dt>
                                                 <dd>
-                                                      <div class="text-lg font-medium text-gray-900">0</div>
+                                                      <div class="text-lg font-medium text-gray-900"><?= $fetch_user->fetch_user_count() ?></div>
                                                 </dd>
                                           </dl>
                                     </div>
@@ -96,7 +110,7 @@ session_start();
                                           <dl>
                                                 <dt class="text-sm font-medium text-gray-500 truncate">Recipe</dt>
                                                 <dd>
-                                                      <div class="text-lg font-medium text-gray-900">0</div>
+                                                      <div class="text-lg font-medium text-gray-900"><?= $fetch_recipe->fetch_recipe_count() ?></div>
                                                 </dd>
                                           </dl>
                                     </div>
@@ -122,9 +136,9 @@ session_start();
                                     </div>
                                     <div class="ml-5 w-0 flex-1">
                                           <dl>
-                                                <dt class="text-sm font-medium text-gray-500 truncate">Comments</dt>
+                                                <dt class="text-sm font-medium text-gray-500 truncate">Messages</dt>
                                                 <dd>
-                                                      <div class="text-lg font-medium text-gray-900">0</div>
+                                                      <div class="text-lg font-medium text-gray-900"><?= $fetch_message->fetch_message_count() ?></div>
                                                 </dd>
                                           </dl>
                                     </div>

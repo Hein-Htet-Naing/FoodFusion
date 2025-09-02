@@ -146,7 +146,6 @@ $check_user = Auth::checkUser();
 
                         <div class="hidden md:block absolute left-1/2 h-full w-1 bg-orange-200 transform -translate-x-1/2"></div>
 
-
                         <div class="space-y-12">
 
                               <div class="relative flex flex-col md:flex-row items-center">

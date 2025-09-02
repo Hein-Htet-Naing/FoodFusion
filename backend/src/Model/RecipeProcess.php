@@ -131,4 +131,12 @@ class RecipeProcess
             $stmt->bindParam(':recipe_id', $recipeid);
             $stmt->execute();
       }
+      public function fetch_recipe_count()
+      {
+            $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM recipe_collection WHERE status = :status");
+            $status = "active";
+            $stmt->bindParam(':status', $status);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+      }
 }
