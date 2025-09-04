@@ -91,10 +91,11 @@ class CookBookProcess
             $status = 'active';
             $sql = "SELECT c.*, u.firstName, u.lastName, u.image FROM cookbook c  
             LEFT JOIN users u ON c.userid = u.userid 
-            WHERE u.status = :status AND u.role_id = :roleid
+            WHERE u.status = :status AND u.role_id = :roleid AND c.status = :cstatus
             ORDER BY c.community_id DESC";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindValue(':status', $status);
+            $stmt->bindValue(':cstatus', $status);
             $stmt->bindValue(':roleid', $role);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -147,13 +148,26 @@ class CookBookProcess
       }
       public function fetch_Limited_cookbook()
       {
+            $active = 'active';
             $sql = "SELECT c.*, u.firstName, u.lastName, u.image FROM cookbook c
             LEFT JOIN users u ON c.userid = u.userid
-            WHERE u.status = 'active'
+            WHERE u.status = :status AND c.status = :cstatus
             ORDER BY c.community_id DESC
             LIMIT 3";
             $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':status', $active);
+            $stmt->bindParam(':cstatus', $active);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
+      }
+
+      public function update_cookbook_collection(int $cookbookid)
+      {
+            $status = "inactive";
+            $sql = "UPDATE cookbook SET status = :status WHERE community_id =:community_id";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':status', $status);
+            $stmt->bindParam(':community_id', $cookbookid);
+            $stmt->execute();
       }
 }

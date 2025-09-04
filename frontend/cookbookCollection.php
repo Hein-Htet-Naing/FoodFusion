@@ -84,7 +84,7 @@ if (isset($_POST['difficulty']) || isset($_POST['searchTerm'])) {
       </section>
 
       <!-- Main Content -->
-      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border rounded-t-xl border-gray-300">
             <!-- Difficulty Filters -->
             <div class="mb-12">
                   <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse by Difficulty</h2>

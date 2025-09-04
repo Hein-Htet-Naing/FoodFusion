@@ -13,9 +13,11 @@ if ($check_admin) {
 
 if (isset($_SESSION['delete_success'])) {
       echo '<script>alert(' . $_SESSION['deleted_success'] . ') </script>';
+      unset($_SESSION['delete_success']);
 }
 if (isset($_SESSION['delete_error'])) {
       echo '<script>alert(' . $_SESSION['deleted_error'] . ') </script>';
+      unset($_SESSION['delete_error']);
 }
 ?>
 
@@ -50,7 +52,7 @@ if (isset($_SESSION['delete_error'])) {
             <div class="flex-1 flex flex-col overflow-hidden">
 
                   <!-- Main content -->
-                  <main class="w-full flex-1 p-6 scroll_hidden">
+                  <div class="w-full flex-1 p-6 scroll_hidden">
                         <div class="min-h-screen mt-10 md:mt-0">
                               <!-- showing Recipes -->
                               <div class="bg-white shadow rounded-lg">
@@ -69,7 +71,6 @@ if (isset($_SESSION['delete_error'])) {
                                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Desctiption</th>
                                                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Created_At</th>
                                                             <th scope="col" class="relative px-6 py-3"><span class="sr-only">Edit</span></th>
-
                                                       </tr>
                                                 </thead>
 
@@ -80,8 +81,8 @@ if (isset($_SESSION['delete_error'])) {
                                                       <tr>
                                                             <td class="px-6 py-4 whitespace-nowrap">
                                                                   <div class="flex items-center">
-                                                                        <div class="flex-shrink-0 h-10 w-10">
-                                                                              <img class="h-10 w-10 rounded-full" src="../uploads/recipe/' . htmlspecialchars($ls['recipePhoto']) . '" alt="">
+                                                                        <div class="flex-shrink-0 h-20 w-20">
+                                                                              <img class="h-full w-full rounded-full" src="../uploads/recipe/' . htmlspecialchars($ls['recipePhoto']) . '" alt="">
                                                                         </div>
                                                                   </div>
                                                             </td>
@@ -116,9 +117,9 @@ if (isset($_SESSION['delete_error'])) {
                                     </div>
                               </div>
                         </div>
-                  </main>
+                  </div>
             </div>
-            </div>
+      </main>
 </body>
 
 </html>

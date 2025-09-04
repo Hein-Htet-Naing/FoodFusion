@@ -166,7 +166,6 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Handpicked recipes from our community chefs</p>
                   </div>
 
-
                   <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center place-items-center">
                         <?php foreach ($recipe as $rp) {
                               echo
@@ -200,7 +199,8 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
             </div>
       </section>
 
-      <section class="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <!-- cook book -->
+      <section class="py-16 px-6 max-w-6xl mx-auto bg-gradient-to-b from-gray-50 to-white">
             <div class="max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8">
                   <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Latest CookBook</h2>
@@ -243,24 +243,15 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
 
 
       </section>
-      <section class="py-16 px-6 max-w-6xl mx-auto">
-            <div class="grid grid-cols-4 grid-rows-5 gap-2 parent">
-                  <div class="col-start-2 col-span-2 row-start-2 row-span-4 bg-gray-200 div1">
-                        <img src="img/Baked.jpeg" alt="">
-                  </div>
-                  <div class="col-start-1 col-span-3 row-start-1 bg-gray-300 div2">2</div>
-                  <div class="col-start-1 row-start-2 row-span-2 bg-gray-400 div3">3</div>
-                  <div class="col-start-1 row-start-4 row-span-2 bg-gray-500 div4">4</div>
-                  <div class="col-start-4 row-start-1 row-span-5 bg-gray-600 div5">5</div>
-            </div>
-      </section>
+
+      <!-- new Mission -->
       <section class="py-16 px-6 max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
-                  <div class="md:w-1/2 order-2 md:order-1">
+                  <div class="md:w-1/2 order-2 md:order-1 text-justify">
                         <h2 class="text-3xl font-bold text-orange-600 mb-6">Our Mission</h2>
                         <p class="text-gray-700 mb-4">At FoodFusion, our mission is to democratize culinary knowledge and inspire people to discover the joy of cooking, regardless of their skill level or background.</p>
                         <p class="text-gray-700 mb-6">We're committed to building a global community where food enthusiasts can share, learn, and grow together through the universal language of cuisine.</p>
-                        <div class="space-y-4">
+                        <div class="space-y-3">
                               <div class="flex items-start">
                                     <div class="flex-shrink-0 bg-orange-100 p-2 rounded-full mr-4">
                                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -297,7 +288,9 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
                         </div>
                   </div>
                   <div class="md:w-1/2 order-1 md:order-2">
-                        <img src="img/team_mission.jpeg" alt="FoodFusion team mission" class="rounded-xl shadow-2xl">
+                        <div>
+                              <img src="img/chet_team.jpeg" alt="FoodFusion team mission" class="rounded-xl shadow-2xl">
+                        </div>
                   </div>
             </div>
       </section>
