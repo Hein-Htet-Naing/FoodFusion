@@ -77,6 +77,9 @@ $check_user = Auth::checkUser();
                               <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">Mastering Knife Skills</h3>
                                     <p class="text-gray-600">Learn the essential cutting techniques that will make you faster and safer in the kitchen. A must-watch for every home cook!</p>
+                                    <a href="img/video/secret_tips_of_using_knife.mp4" download class="mt-2 inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                          Download
+                                    </a>
                               </div>
                         </div>
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -87,6 +90,9 @@ $check_user = Auth::checkUser();
                               <div class="p-6">
                                     <h3 class="text-xl font-semibold mb-2">5 Genius Kitchen Hacks</h3>
                                     <p class="text-gray-600">These simple tricks will save you time, reduce food waste, and make cooking more enjoyable. You'll wonder how you lived without them.</p>
+                                    <a href="img/video/5_kitchen_hack.mp4" download class="mt-2 inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                          Download
+                                    </a>
                               </div>
                         </div>
                   </div>

@@ -57,19 +57,19 @@
                                </div>
                          </div>
                          <div class="flex space-x-4 gap-2">
-                               <a href="#" class="text-[#1C1C1C] hover:text-gray-400">
+                               <a href="https://www.facebook.com/" class="text-[#1C1C1C] hover:text-gray-400">
                                      <i class="fab fa-facebook-f"></i>
                                </a>
-                               <a href="#" class="text-[#1C1C1C] hover:text-gray-400"">
+                               <a href="https://x.com/" class="text-[#1C1C1C] hover:text-gray-400"">
                                           <i class=" fab fa-twitter"></i>
                                </a>
-                               <a href="#" class="text-[#1C1C1C] hover:text-gray-400"">
+                               <a href="https://www.instagram.com/" class="text-[#1C1C1C] hover:text-gray-400"">
                                           <i class=" fab fa-instagram"></i>
                                </a>
-                               <a href="#" class="text-[#1C1C1C] hover:text-gray-400"">
+                               <a href="https://www.pinterest.com/" class="text-[#1C1C1C] hover:text-gray-400"">
                                           <i class=" fab fa-pinterest"></i>
                                </a>
-                               <a href="#" class="text-[#1C1C1C] hover:text-gray-400"">
+                               <a href="https://www.youtube.com/" class="text-[#1C1C1C] hover:text-gray-400"">
                                           <i class=" fab fa-youtube"></i>
                                </a>
                          </div>

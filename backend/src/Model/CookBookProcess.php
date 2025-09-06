@@ -170,4 +170,17 @@ class CookBookProcess
             $stmt->bindParam(':community_id', $cookbookid);
             $stmt->execute();
       }
+      public function fetch_cookbook_count()
+      {
+            $status = 'active';
+            $sql = "SELECT COUNT(*) FROM cookbook c
+            LEFT JOIN users u ON c.userid = u.userid 
+            WHERE u.status = :status 
+            AND c.status = :cstatus";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':status', $status);
+            $stmt->bindParam(':cstatus', $status);
+            $stmt->execute();
+            return $stmt->fetchColumn();
+      }
 }

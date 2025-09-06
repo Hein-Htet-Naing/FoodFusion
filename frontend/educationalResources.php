@@ -81,6 +81,9 @@ $check_user = Auth::checkUser();
                                     <div class="p-6 sm:w-2/3">
                                           <h3 class="text-xl font-semibold mb-2">How Do Wind Turbines Work?</h3>
                                           <p class="text-gray-600">An animated explanation of the science behind wind power generation. Simple, clear, and informative.</p>
+                                          <a href="img/video/windTurbine.mp4" download class="mt-2 inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                                Download
+                                          </a>
                                     </div>
                               </div>
                               <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col sm:flex-row">
@@ -90,6 +93,9 @@ $check_user = Auth::checkUser();
                                     <div class="p-6 sm:w-2/3">
                                           <h3 class="text-xl font-semibold mb-2">The Future of Energy</h3>
                                           <p class="text-gray-600">A short documentary exploring the innovations that are shaping the future of sustainable energy worldwide.</p>
+                                          <a href="img/video/TheFutureofEnergy.mp4" download class="mt-2 inline-flex items-center bg-green-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition-colors">
+                                                Download
+                                          </a>
                                     </div>
                               </div>
                         </div>
