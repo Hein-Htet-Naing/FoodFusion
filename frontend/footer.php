@@ -1,7 +1,7 @@
  <!-- Footer -->
  <footer class="bg-[#F5E4D0] py-4">
-       <div class="container mx-auto px-6 tex-base lg:text-xl text-shadow-lg">
-             <div class=" grid grid-cols-1 md:justify-items-center-safe md:grid-cols-4 gap-4 my-6">
+       <div class="w-[90%] mx-auto px-6 tex-base lg:text-xl text-shadow-lg">
+             <div class="grid grid-cols-1 md:justify-items-center-safe md:grid-cols-4 gap-4 my-6">
                    <div class="space-y-4">
                          <h3 class="text-xl font-semibold mb-2">About FoodFusion</h3>
                          <p class="text-[#1C1C1C] mb-2 text-base">A culinary platform dedicated to promoting home cooking and culinary creativity among food enthusiasts.</p>
@@ -13,25 +13,25 @@
                          </div>
 
                    </div>
-                   <div>
+                   <div class="space-y-4">
                          <h3 class="text-xl font-semibold mb-2">Quick Links</h3>
                          <ul class="list-none space-y-1 text-base">
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Home</a></li>
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Contact Us</a></li>
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">About Us</a></li>
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Community Cookbook</a></li>
+                               <li><a href="index.php" class="text-[#1C1C1C] hover:text-gray-400">Home</a></li>
+                               <li><a href="contact_us.php" class="text-[#1C1C1C] hover:text-gray-400">Contact Us</a></li>
+                               <li><a href="about_us.php" class="text-[#1C1C1C] hover:text-gray-400">About Us</a></li>
+                               <li><a href="cookbookCollection.php" class="text-[#1C1C1C] hover:text-gray-400">Community Cookbook</a></li>
                          </ul>
                    </div>
-                   <div>
+                   <div class="space-y-4">
                          <h3 class="text-xl font-semibold mb-2">Resources</h3>
                          <ul class="list-none space-y-1 text-base">
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Receipe</a></li>
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Culinary Resources</a></li>
-                               <li><a href="#" class="text-[#1C1C1C] hover:text-gray-400">Educational Resources</a></li>
+                               <li><a href="recipeCollection.php" class="text-[#1C1C1C] hover:text-gray-400">Receipe</a></li>
+                               <li><a href="curlinaryResources.php" class="text-[#1C1C1C] hover:text-gray-400">Culinary Resources</a></li>
+                               <li><a href="educationalResources.php" class="text-[#1C1C1C] hover:text-gray-400">Educational Resources</a></li>
                          </ul>
                    </div>
 
-                   <div>
+                   <div class="space-y-4">
                          <h3 class="text-xl font-semibold mb-2">Contact us</h3>
                          <div class="flex items-start">
                                <div class="flex-shrink-0">
@@ -73,8 +73,6 @@
                                           <i class=" fab fa-youtube"></i>
                                </a>
                          </div>
-
-
                    </div>
              </div>
        </div>
@@ -82,9 +80,9 @@
        <div class="border-t border-gray-700 mx-8 p-4 flex flex-col md:flex-row justify-between items-center">
              <p class="text-gray-400 text-sm">&copy; <?php echo date('Y'); ?> FoodFusion. All rights reserved.</p>
              <div class="flex space-x-6 mt-4 md:mt-0">
-                   <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-                   <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-                   <a href="#" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+                   <a href="privacy_policy.php" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                   <a href="terms.php" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                   <a href="cookie_policy.php" class="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
              </div>
        </div>
        </div>
