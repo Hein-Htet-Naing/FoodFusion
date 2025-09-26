@@ -23,9 +23,9 @@ if ($check_admin) {
 
 <body>
       <!-- Sidebar -->
-      <div class="sidebar hidden md:relative md:flex md:flex-shrink-0 z-50
+      <div class="sidebar hidden lg:flex lg:relative lg:flex-shrink-0 z-50 
  transition-all duration-300 transform -translate-x-full md:translate-x-0">
-            <div class="flex fixed inset-y-0 left-0 top-10 md:top-0 md:relative flex-col w-64 bg-gray-800">
+            <div class="flex fixed inset-y-0 left-0 top-10 lg:top-0 lg:relative flex-col w-64 bg-gray-800">
                   <div class="flex items-center justify-center h-16 bg-gray-900">
                         <span class="text-white font-semibold text-xl">FoodFusion Admin</span>
                   </div>
@@ -101,7 +101,7 @@ if ($check_admin) {
                   </div>
             </div>
       </div>
-      <div class="md:hidden bg-white shadow fixed w-full">
+      <div class="lg:hidden bg-white shadow fixed w-full">
             <div class="flex items-center justify-between px-4 py-3">
                   <div>
                         <button class="m_sidebar text-gray-500 focus:outline-none">

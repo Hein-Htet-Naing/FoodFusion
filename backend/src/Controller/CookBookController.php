@@ -13,7 +13,7 @@ class CookBookController
             if (isset($_GET['action']) && $_GET['action'] === 'delete' && isset($cookbook_id)) {
 
                   $cookbook->update_cookbook_collection($cookbook_id);
-                  $_SESSION['delete_success']  = "Deleted Successfully";
+                  $_SESSION['deleted_success']  = "Deleted Successfully";
                   HTTP::redirect("../backend/CookBookCollection.php");
                   return;
             } else {
@@ -46,7 +46,7 @@ class CookBookController
                   }
                   //checking image file size
                   $size = $_FILES['recipeImage']['size'];
-                  $totalFileSize = 1000 * 1024 * 1024; // 100MB
+                  $totalFileSize = 500 * 1024 * 1024; // 50MB
                   if ($size > $totalFileSize) {
                         $_SESSION['uploadCookBook_error'] = "File size exceeds the limit of 100MB!";
                         HTTP::redirect("/frontend/uploadCookBook.php");

@@ -1,13 +1,10 @@
 <?php
 
 namespace Lupid\FoodFusion\Controller;
-
-
 use Lupid\FoodFusion\Model\RegisterProcess;
 use Exception;
 use PDOException;
 use Helper\HTTP;
-
 class RegisterController
 {
       public function handle()
@@ -43,7 +40,7 @@ class RegisterController
                   }
             }
             if ($_POST['pwd'] !== $_POST['confrimPwd']) {
-                  $errors['register_error'] = 'Passwords must be same!';
+                  $_SESSION['register_error'] = 'Passwords must be same!';
                   HTTP::redirect("/frontend/registerPage.php");
                   return;
             }
@@ -53,7 +50,7 @@ class RegisterController
                   $reg_user->setData($_POST, $_FILES);
 
                   if ($reg_user->email_duplicate()) {
-                        $_SESSION['register_errors'] = "This email is already registered!";
+                        $_SESSION['register_error'] = "This email is already registered!";
                         HTTP::redirect("/frontend/registerPage.php");
                         return;
                   }

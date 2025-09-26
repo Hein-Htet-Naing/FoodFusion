@@ -19,7 +19,6 @@ if (isset($_POST['search']) || isset($_POST['difficulty'])) {
 } else {
       $recipe = $recipe_colllection->fetch_all_data_from_recipeCollection();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -78,16 +77,30 @@ if (isset($_POST['search']) || isset($_POST['difficulty'])) {
                               </form>
                         </div>
                   </div>
-                  <!-- Difficulty Filters -->
+                  <!-- Filters -->
                   <div class="mt-5">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse by Difficulty</h2>
-                        <form method="POST" class="flex flex-wrap gap-3">
-                              <button type="submit" name='difficulty' value="all" class="difficulty-filter active px-4 py-2 rounded-full bg-white">All Cookbooks</button>
-                              <button type="submit" name='difficulty' value="easy" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Easy</button>
-                              <button type="submit" name='difficulty' value="medium" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Medium</button>
-                              <button type="submit" name='difficulty' value="hard" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Hard</button>
-                              <button type="submit" name='difficulty' value="difficult" class="difficulty-filter px-4 py-2 rounded-full bg-white border border-gray-300 hover:bg-gray-100">Difficult</button>
-                        </form>
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Browse Our Recipe</h2>
+                        <div class="flex gap-3">
+                              <form method="POST" class="flex gap-3">
+                                    <select name="difficulty" class="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-800" onchange=" this.form.submit()">
+                                          <option>All Recipes</option>
+                                          <option value="all">All</option>
+                                          <option value="easy">Easy</option>
+                                          <option value="medium">Medium</option>
+                                          <option value="hard">Hard</option>
+                                    </select>
+                              </form>
+                              <form method="POST" class="flex gap-3">
+                                    <select name="search" class="px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-800" onchange=" this.form.submit()">
+                                          <option>Type</option>
+                                          <option value="breakfast">Breakfast</option>
+                                          <option value="dessert">Dessert</option>
+                                          <option value="fast food">Fast Food</option>
+                                          <option value="salad">Salad</option>
+                                    </select>
+                              </form>
+                        </div>
+
                   </div>
             </section>
 
@@ -136,20 +149,7 @@ if (isset($_POST['search']) || isset($_POST['difficulty'])) {
 
       </main>
       <?php require('footer.php') ?>
-      <script>
-            // Difficulty filter functionality
-            document.querySelectorAll('.difficulty-filter').forEach(button => {
-                  button.addEventListener('click', function() {
-                        document.querySelectorAll('.difficulty-filter').forEach(btn => {
-                              btn.classList.remove('active');
-                              btn.classList.add('bg-orange-500', 'border', 'border-gray-300', 'hover:bg-gray-100');
-                        });
 
-                        this.classList.add('active');
-                        this.classList.remove('bg-white', 'border', 'border-gray-300', 'hover:bg-gray-100');
-                  });
-            });
-      </script>
       <script src="js/navbar.js"></script>
 </body>
 

@@ -165,7 +165,7 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">Featured Recipes</h2>
                         <p class="text-lg text-gray-600 max-w-2xl mx-auto">Handpicked recipes from our community chefs</p>
                   </div>
-
+                  <!-- Recipe card -->
                   <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 justify-center place-items-center">
                         <?php foreach ($recipe as $rp) {
                               echo
@@ -199,19 +199,45 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
             </div>
       </section>
 
+      <!-- event carousel -->
+      <section id="events-carousel" class="bg-gray-100 rounded-lg p-8 md:p-12 text-center">
+            <h2 class="text-3xl md:text-4xl text-start font-bold mb-8">Upcoming Cooking Events</h2>
+            <div class="relative w-full max-w-7xl mx-auto overflow-hidden">
+                  <div id="carousel-wrapper" class="flex transition-transform duration-700 ease-in-out">
+                        <div class="carousel-item flex-shrink-0 w-full">
+                              <img src="img/eventv1.jpg" class="w-full h-120 object-cover rounded-xl">
+                        </div>
+                        <div class="carousel-item flex-shrink-0 w-full">
+                              <img src="img/eventv2.jpg" class="w-full h-120 object-cover rounded-xl">
+                        </div>
+                        <div class="carousel-item flex-shrink-0 w-full">
+                              <img src="img/eventv3.jpg" class="w-full h-120 object-cover rounded-xl">
+                        </div>
+                  </div>
+
+                  <button id="prev-btn" class="absolute top-1/2 left-0 md:-left-6 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-md">
+                        <i class="fas fa-chevron-left text-gray-700 h-6 w-6"></i>
+                  </button>
+                  <button id="next-btn" class="absolute top-1/2 right-0 md:-right-6 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-md">
+                        <i class="fas fa-chevron-right text-gray-700 h-6 w-6"></i>
+                  </button>
+            </div>
+      </section>
+
+
       <!-- cook book -->
       <section class="py-16 px-6 max-w-6xl mx-auto bg-gradient-to-b from-gray-50 to-white">
             <div class="max-w-7xl mx-auto items-center px-4 sm:px-6 lg:px-8">
                   <div class="text-center mb-12">
-                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Latest CookBook</h2>
-                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Discover recipes shared by our community</p>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Trending & Latest CookBook</h2>
+                        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore the latest culinary inspirations shared by our community</p>
                   </div>
-                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <?php
                         foreach ($cookbook as $cl) {
                               echo
                               '
-                  <div class="cookbook-card bg-white rounded-xl shadow-md overflow-hidden">
+                  <div class="card bg-white rounded-xl shadow-md overflow-hidden">
                         <div class="relative h-48 overflow-hidden">
                               <img src="../uploads/cookbook/' . htmlspecialchars($cl['recipePhoto']) . '" alt="Vegetarian Delights" class="w-full h-full object-cover">
                               <div class="absolute top-4 left-4">
@@ -236,7 +262,7 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
 
                   <div class="text-center mt-12">
                         <a href="cookbookCollection.php" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600">
-                              View Our Recipe Books <i class="fas fa-arrow-right ml-2"></i>
+                              View Culinary Inspirations <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                   </div>
             </div>
@@ -295,7 +321,7 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
             </div>
       </section>
       <!-- how it works -->
-      <section class="py-16 bg-white skew-section relative">
+      <section class="pb-16 pt-6 bg-gray-100 skew-section relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 skew-content">
                   <div class="text-center mb-12">
                         <h2 class="text-3xl font-bold text-gray-900 mb-4">How FoodFusion Works</h2>
@@ -332,7 +358,9 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
       <!-- Cookie Consent -->
       <div id="cookie-consent-banner" class="fixed bottom-0 left-0 right-0 bg-[#1C1C1C] shadow-lg p-4 flex flex-col items-center justify-center gap-2 z-50">
             <p class="text-center  text-white px-4 py-2 rounded-md">
-                  We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+                  We use cookies to enhance your browsing experience, serve personalized
+                  ads or content, and analyze our traffic. By clicking "Accept All",
+                  you consent to our use of cookies.
                   <a href="/privacy-policy">Read more</a>.
             </p>
             <div class="cookie-buttons">
@@ -343,7 +371,7 @@ $cookbook = $cookbook_collection->fetch_Limited_cookbook();
 
 
       <?php require('footer.php') ?>
-
+      <script src="js/swiper.js"></script>
       <script src="js/navbar.js"></script>
       <script src="js/pwd_hide.js"></script>
       <script src="js/joinUsForm.js"></script>

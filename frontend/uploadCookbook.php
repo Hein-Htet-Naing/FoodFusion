@@ -35,7 +35,10 @@ $check_user = Auth::checkUser();
                                     <div class="flex">
                                           <div class="flex-shrink-0">
                                                 <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                                                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                                      <path fill-rule="evenodd"
+                                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 
+                                                      1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.
+                                                      414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                                                 </svg>
                                           </div>
                                           <div class="ml-3">
@@ -56,7 +59,9 @@ $check_user = Auth::checkUser();
                                     <div class="flex">
                                           <div class="flex-shrink-0">
                                                 <svg class="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor">
-                                                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 
+                                                      1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 
+                                                      1 0 001.414 0l4-4z" clip-rule="evenodd" />
                                                 </svg>
                                           </div>
                                           <div class="ml-3">
@@ -73,7 +78,8 @@ $check_user = Auth::checkUser();
 
                                     <div>
                                           <label for="recipeName" class="block text-sm font-medium text-gray-700 mb-1">Recipe Name*</label>
-                                          <input type="text" id="recipeName" name="recipeName" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
+                                          <input type="text" id="recipeName" name="recipeName" required class="w-full px-4 py-2 border border-gray-300 
+                                          rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
                                     </div>
 
                                     <div>
@@ -87,17 +93,20 @@ $check_user = Auth::checkUser();
                                           <div>
                                                 <label for="prepTime" class="block text-sm font-medium text-gray-700 mb-1">Prep Time (min)*</label>
                                                 <input type="text" id="prepTime" name="prepTime" required
-                                                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
+                                                      class="w-full px-4 py-2 border border-gray-300 
+                                                      rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
                                           </div>
                                           <div>
                                                 <label for="cookTime" class="block text-sm font-medium text-gray-700 mb-1">Cook Time (min)*</label>
                                                 <input type="text" id="cookTime" name="cookTime" required
-                                                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
+                                                      class="w-full px-4 py-2 border border-gray-300 rounded-md 
+                                                      focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
                                           </div>
                                           <div>
                                                 <label for="servings" class="block text-sm font-medium text-gray-700 mb-1">Servings*</label>
                                                 <input type="text" id="servings" name="servings" required
-                                                      class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
+                                                      class="w-full px-4 py-2 border border-gray-300 rounded-md 
+                                                      focus:outline-none focus:ring-2 focus:ring-[#1C1C1C]">
                                           </div>
                                     </div>
                               </div>
@@ -107,11 +116,21 @@ $check_user = Auth::checkUser();
                                     <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">Recipe Image</h2>
 
                                     <div id="imageUpload" class="flex items-center justify-center w-full">
-                                          <label for="recipeImage" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                          <label for="recipeImage" class="flex flex-col items-center justify-center w-full h-64 border-2
+                                           border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
                                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                                       <svg class="w-10 h-10 mb-3 text-gray-600" fill="none" stroke="currentColor"
-                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z" />
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                                                            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License -
+                                                             https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="10"
+                                                                  d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 
+                                                            544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 
+                                                            197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 
+                                                            224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 
+                                                            467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 
+                                                            449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 
+                                                            362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z" />
                                                       </svg>
                                                       <p class="mb-2 text-sm text-gray-500">Click to upload or drag and drop</p>
                                                       <p class="text-xs text-gray-500">JPG, PNG, GIF, WEBP (Max 5MB)</p>
@@ -183,7 +202,9 @@ $check_user = Auth::checkUser();
 
                               <!-- Submit Button -->
                               <div class="pt-4">
-                                    <button type="submit" class="w-full bg-orange-500 text-white py-3 px-4 rounded-md hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] focus:ring-offset-2 font-medium">
+                                    <button type="submit" class="w-full bg-orange-500 text-white py-3 px-4 rounded-md 
+                                    hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-[#1C1C1C] 
+                                    focus:ring-offset-2 font-medium">
                                           Share Recipe with Community
                                     </button>
                               </div>

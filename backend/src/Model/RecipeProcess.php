@@ -128,7 +128,7 @@ class RecipeProcess
       public function fetch_Limited_recipe()
       {
             $sql = "SELECT rc.*, u.firstName, u.lastName FROM recipe_collection rc 
-            LEFT JOIN users u ON rc.user_id = u.userid ORDER BY rc.recipe_id DESC LIMIT 3";
+            LEFT JOIN users u ON rc.user_id = u.userid ORDER BY rc.recipe_id DESC LIMIT 6";
             $stmt = $this->pdo->prepare($sql);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

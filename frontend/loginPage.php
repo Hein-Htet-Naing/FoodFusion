@@ -114,8 +114,7 @@ if (isset($_COOKIE['login_counter'])) {
                                                       }, 1000);
                                                 }
                                           </script>
-                                          <script src="js/message_hide.js">
-                                          </script>
+                                          <script src="js/message_hide.js"></script>
 </body>
 
 </html>

@@ -52,14 +52,14 @@
                               </ul>
                         </li>
                         <li class="relative group">
-                              <a href="#" class="inline-block hover:text-amber-400 transform translate-x-[3.5em]">Resources</a>
+                              <a href="" class="inline-block hover:text-amber-400 transform translate-x-[3.5em]">Resources</a>
                               <!-- Dropdown -->
                               <ul class="max-h-0 overflow-hidden group-hover:max-h-40 transition-all duration-300 ease-in-out bg-[#f5f5dc] text-[#333333] rounded-md mt-2">
                                     <li>
-                                          <a href="#" class="block px-4 py-2 hover:bg-[#ffe8b3]">Culinary Resources</a>
+                                          <a href="curlinaryResources.php" class="block px-4 py-2 hover:bg-[#ffe8b3]">Culinary Resources</a>
                                     </li>
                                     <li>
-                                          <a href="#" class="block px-4 py-2 hover:bg-[#ffe8b3]">Educational Resources</a>
+                                          <a href="educationalResources.php" class="block px-4 py-2 hover:bg-[#ffe8b3]">Educational Resources</a>
                                     </li>
                               </ul>
                         </li>

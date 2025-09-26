@@ -158,6 +158,7 @@ $check_user = Auth::checkUser();
 
       <!-- Footer -->
       <?php require('footer.php'); ?>
+      <script src="js/navbar.js"></script>
 </body>
 
 

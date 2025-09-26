@@ -6,7 +6,6 @@ use Lupid\FoodFusion\Config\Database as dbh;
 use Exception;
 use PDOException;
 use Helper\HTTP;
-
 class RegisterProcess
 {
       private $first_name;
@@ -38,7 +37,7 @@ class RegisterProcess
 
       public function process_image(array $image)
       {
-            if ($image['error'] === UPLOAD_ERR_NO_FILE) {
+            if ($image['error'] === UPLOAD_ERR_NO_FILE || $image === null) {
                   // if no image, set default image
                   $this->image =  'default.jpeg';
             } else if ($image['error'] !== UPLOAD_ERR_OK) {

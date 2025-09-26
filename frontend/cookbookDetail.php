@@ -20,13 +20,13 @@ $cookbookDetails = $cookbook->get_cook_details($cookbookId);
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-      <!-- <link rel="stylesheet" href="../src/output.css"> -->
+      <script src="https://kit.fontawesome.com/0bf00ca408.js" crossorigin="anonymous"></script>
       <title>Document</title>
 </head>
-
 <body class="bg-orange-100 font-sans antialiased text-shadow-lg">
-      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-amber-100">
-            <h1 class="text-3xl font-bold mb-6">Cookbook Details</h1>
+      <?php require('header.php') ?>
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-orange-100">
+            <h1 class="text-3xl font-bold mb-4 pt-18">Cookbook Details</h1>
             <div class="bg-white rounded-lg shadow-md p-6 w-full">
                   <div class="flex flex-col md:flex-row mb-4">
                         <img class="w-full md:w-1/2 rounded-lg mr-4" src="../uploads/cookbook/<?= $cookbookDetails['recipePhoto'] ?>" alt="Cookbook Image">
@@ -57,7 +57,8 @@ $cookbookDetails = $cookbook->get_cook_details($cookbookId);
                   </div>
             </div>
       </main>
-
+      <?php require('footer.php') ?>
+      <script src="js/navbar.js"></script>
 </body>
 
 </html>
